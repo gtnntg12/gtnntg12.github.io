@@ -1,1 +1,28 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GitHub to Raw GitHub Link Converter</title>
+  </head>
+  <body>
+    <label for="github-link">Enter GitHub Link:</label>
+    <input type="text" id="github-link">
+    <button onclick="convertLink()">Convert</button>
+    <br><br>
+    <label for="raw-link">Raw GitHub Link:</label>
+    <input type="text" id="raw-link" readonly>
+    <script>
+      function convertLink() {
+        const githubLink = document.getElementById("github-link").value;
+        const regex = /^https?:\/\/github\.com\/([a-zA-Z0-9-_.]+)\/([a-zA-Z0-9-_.]+)\/blob\/([a-zA-Z0-9-_.]+)\/([a-zA-Z0-9-_.]+)$/;
+        if (regex.test(githubLink)) {
+          const matches = regex.exec(githubLink);
+          const rawLink = `https://raw.githubusercontent.com/${matches[1]}/${matches[2]}/${matches[3]}/${matches[4]}`;
+          document.getElementById("raw-link").value = rawLink;
+        } else {
+          alert("Invalid GitHub link!");
+        }
+      }
+    </script>
+  </body>
+</html>
