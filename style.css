@@ -10,6 +10,7 @@ html,body {
 
 body {
 	background: #373e47 url("images/bg.jpg") repeat;
+	background-color: #ffde52; /* Добавлен цвет фона */
 	font-family: Arial;
 	font-size: 12px;
 	color: #e4e4e4;
@@ -17,14 +18,15 @@ body {
 	text-shadow: 0 1px 0 rgba(0,0,0,0.75);
 }
 
+/* Изменены стили ::selection и ::-moz-selection, чтобы убрать фиолетовый цвет */
 ::selection {
-	background-color: #a45f93;
+	background-color: #ffde52;
 	color: white;
 	text-shadow: none;
 }
 
 ::-moz-selection {
-	background-color: #a45f93;
+	background-color: #ffde52;
 	color: white;
 	text-shadow: none;
 }
